@@ -27,12 +27,12 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
+    transition: display .3s;
 
     &__menu{
         display: flex;
         justify-content: center;
         margin-right: 8rem;
-        width: 30%;
         font-size: 2rem;
 
         &__about{
@@ -85,7 +85,7 @@ body {
     }
 
     &__map {
-        // width: 50%;
+        display: block;
         font-size: 6rem;
 
         &__column {
@@ -105,11 +105,33 @@ body {
                     width: 60px;
                     height: 60px;
                     opacity: 0;
+                    transition: opacity .6s;
+                }
+
+            }
+
+            &__rows__used{
+                padding: 5rem;
+                cursor: pointer;
+                transition: background-color .3s;
+
+                &__fields__used{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 60px;
+                    height: 60px;
+                    opacity: 0;
+                    transition: opacity .6s;
                 }
             }
             
             &__row:hover{
                 background-color: #0093E9;
+            }
+
+            &__row__used:hover{
+                background-color: red;
             }
         }
 
@@ -138,6 +160,22 @@ body {
             }
         }
 
+    }
+
+    &__end {
+        display: none;
+        width: 484px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        text-align: center;
+
+        &__result{
+            padding-bottom: 2rem;
+            font-size: 4rem;
+            font-weight: bold;
+        }
     }
 
 
