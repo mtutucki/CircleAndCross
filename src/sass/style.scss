@@ -51,12 +51,13 @@ body {
                     cursor: pointer;
                     background-color: #0093E9;
                     border: 1px solid black;
-                    transition: background-color .3s;
+                    transition: transform .3s;
 
                     &--x{
                         background-color: transparent;
                     }
                 }
+
 
                 &__button:hover{
                     transform: scale(1.1);
@@ -76,6 +77,18 @@ body {
                 transition: background-color .3s;
             }
 
+            &__start--disabled{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                width: 100%;
+                background-color: transparent;
+                border: 2px solid black;
+                border-radius: 8px;
+                cursor: default;
+            }
+
             &__start:hover{
                 background-color: #0093E9;
             }
@@ -87,16 +100,17 @@ body {
     &__map {
         display: block;
         font-size: 6rem;
+        transform: rotate(45deg);
+        opacity: .2;
+
 
         &__column {
             display: flex;
             flex-direction: row;
 
             &__row {
-
                 padding: 5rem;
-                cursor: pointer;
-                transition: background-color .3s;
+                cursor: default;
 
                 &__field{
                     display: flex;
@@ -112,7 +126,7 @@ body {
 
             &__rows__used{
                 padding: 5rem;
-                cursor: pointer;
+                cursor: default;
                 transition: background-color .3s;
 
                 &__fields__used{
@@ -121,18 +135,13 @@ body {
                     align-items: center;
                     width: 60px;
                     height: 60px;
-                    // opacity: 0;
+                    opacity: 1;
                     transition: opacity .6s;
                 }
             }
             
-            &__row:hover{
-                background-color: #0093E9;
-            }
 
-            &__row__used:hover{
-                background-color: red;
-            }
+
         }
 
         &__column--one,
@@ -178,6 +187,30 @@ body {
         }
     }
 
+    .row__active{
+        cursor: pointer;
+        transition: background-color .3s;
+    }
+
+    .row__active:hover{
+        background-color: #0093E9;
+    }
+
+    .map__active{
+        animation: rotateMap .6s forwards .3s ;
+
+    }
+
+    @keyframes rotateMap {
+        from{
+            transform: rotate(45deg);
+            opacity: .3;
+        }
+        to{
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+    }
 
 
 
