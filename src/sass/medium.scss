@@ -1,0 +1,76 @@
+$mapFontSize: 5.5rem;
+$mapPadding: 2.8rem;
+$fieldSize: 50px;
+
+.game {
+
+    &__menu {
+        font-size: 1.8rem;
+        text-align: center;
+
+        &__about {
+
+            &__name {
+                font-size: 2.6rem;
+            }
+
+            &__weapon{
+                padding: 3rem 0 ;
+
+                &__button{
+                    padding: .8rem 2rem;
+                }
+            }
+
+            &__start {
+                padding: 1.4rem;
+            }
+
+            &__start--disabled {
+                padding: 1.4rem;
+            }
+        }
+    }
+
+    &__map {
+        font-size: $mapFontSize;
+
+
+        &__column {
+
+            &__row {
+                padding: $mapPadding;
+
+                &__field {
+                    width: $fieldSize;
+                    height: $fieldSize;
+
+                }
+
+            }
+
+            &__rows__used {
+                padding: $mapPadding;
+
+                &__fields__used {
+                    width: $fieldSize;
+                    height: $fieldSize;
+                }
+            }
+        }
+    }
+
+    &__end {
+        width: 322px;
+        font-size: 1.8rem;
+
+        &__result {
+            font-size: 2.8rem;
+        }
+
+        &__text {
+            margin-top: 2rem;
+        }
+    }
+
+}

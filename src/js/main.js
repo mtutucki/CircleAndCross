@@ -90,6 +90,7 @@ const fillField = (e) => {
 const checkWin = () => {
 
     compMove();
+
     if ($fieldsVal[0].textContent == $weapon && $fieldsVal[1].textContent == $weapon && $fieldsVal[2].textContent == $weapon ||
         $fieldsVal[3].textContent == $weapon && $fieldsVal[4].textContent == $weapon && $fieldsVal[5].textContent == $weapon ||
         $fieldsVal[6].textContent == $weapon && $fieldsVal[7].textContent == $weapon && $fieldsVal[8].textContent == $weapon ||
@@ -101,12 +102,8 @@ const checkWin = () => {
 
         endGame();
         $resultText.textContent = "Wygrałeś";
-        $weaponComp.textContent = "0";
-        $weaponComp.style.opacity = "0";
-    } 
 
-
-    else if ($fieldsVal[0].textContent == $weaponComp && $fieldsVal[1].textContent == $weaponComp && $fieldsVal[2].textContent == $weaponComp ||
+    } else if ($fieldsVal[0].textContent == $weaponComp && $fieldsVal[1].textContent == $weaponComp && $fieldsVal[2].textContent == $weaponComp ||
         $fieldsVal[3].textContent == $weaponComp && $fieldsVal[4].textContent == $weaponComp && $fieldsVal[5].textContent == $weaponComp ||
         $fieldsVal[6].textContent == $weaponComp && $fieldsVal[7].textContent == $weaponComp && $fieldsVal[8].textContent == $weaponComp ||
         $fieldsVal[0].textContent == $weaponComp && $fieldsVal[3].textContent == $weaponComp && $fieldsVal[6].textContent == $weaponComp ||
@@ -118,15 +115,13 @@ const checkWin = () => {
         $resultText.textContent = "Przegrałeś";
         endGame();
 
-        }
-
-        else if ($fieldsVal[0].textContent !== "0" && $fieldsVal[1].textContent !== "1" && $fieldsVal[2].textContent !== "2" &&
+    } else if ($fieldsVal[0].textContent !== "0" && $fieldsVal[1].textContent !== "1" && $fieldsVal[2].textContent !== "2" &&
         $fieldsVal[3].textContent !== "3" && $fieldsVal[4].textContent !== "4" && $fieldsVal[5].textContent !== "5" &&
-        $fieldsVal[6].textContent !== "6" && $fieldsVal[7].textContent !== "7" && $fieldsVal[8].textContent !== "8"){
-            
-            $resultText.textContent = "Remis";
-            endGame();
-        }
+        $fieldsVal[6].textContent !== "6" && $fieldsVal[7].textContent !== "7" && $fieldsVal[8].textContent !== "8") {
+
+        $resultText.textContent = "Remis";
+        endGame();
+    }
 
 }
 

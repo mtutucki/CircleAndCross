@@ -11,71 +11,82 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="dist/css/style.min.css">
-    <!-- <link rel="stylesheet" href="css/small.css"> -->
-    <!-- <link rel="stylesheet" media="screen and (min-width:768px)" href="css/medium.css"> -->
-    <!-- <link rel="stylesheet" media="screen and (min-width:992px)" href="dist/css/large.min.css"> -->
-    <!-- font awesome -->
+    <link rel="stylesheet" media="screen and (min-width:576px)" href="dist/css/small.min.css">
+    <link rel="stylesheet" media="screen and (min-width:768px)" href="dist/css/medium.min.css">
+    <link rel="stylesheet" media="screen and (min-width:992px)" href="dist/css/large.min.css">
+
 
 </head>
 
 <body>
 
     <main>
-        <div class="game">
 
+        <div class="wrapper">
+            <div class="game">
 
-            <div class="game__menu">
-                <div class="game__menu__about">
-                    <p class="game__menu__about__name">Kółko i krzyżyk</p>
-                    <p class="game__menu__about__rules">Jako pierwszy obejmij trzy pola w jednej linii</p>
-                    <p class="game__menu__about__weapon">Wybierz czym grasz: <button class="game__menu__about__weapon__button game__menu__about__weapon__button--o">O</button> <button class="game__menu__about__weapon__button game__menu__about__weapon__button--x">X</button></p>
-                    <button class="game__menu__about__start">START</button>
+                <div class="game__menu">
+                    <div class="game__menu__about">
+                        <p class="game__menu__about__name">Kółko i krzyżyk</p>
+                        <p class="game__menu__about__rules">Jako pierwszy obejmij trzy pola w jednej linii</p>
+                        <p class="game__menu__about__weapon">Wybierz broń: <button
+                                class="game__menu__about__weapon__button game__menu__about__weapon__button--o">O</button>
+                            <button
+                                class="game__menu__about__weapon__button game__menu__about__weapon__button--x">X</button>
+                        </p>
+                        <button class="game__menu__about__start">START</button>
+                    </div>
                 </div>
+    
+                <div class="game__map">
+    
+                    <div class="game__map__column game__map__column--one">
+                        <div class="game__map__column__row game__map__column--one__row--first">
+                            <div class="game__map__column__row__field game__map__column--one__row--first__field">0</div>
+                        </div>
+                        <div class="game__map__column__row game__map__column--one__row--second">
+                            <div class="game__map__column__row__field game__map__column--one__row--second__field">1</div>
+                        </div>
+                        <div class="game__map__column__row game__map__column--one__row--third">
+                            <div class="game__map__column__row__field game__map__column--one__row--third__field">2</div>
+                        </div>
+                    </div>
+    
+                    <div class="game__map__column game__map__column--two">
+                        <div class="game__map__column__row game__map__column--two__row--first">
+                            <div class="game__map__column__row__field game__map__column--two__row--first__field">3</div>
+                        </div>
+                        <div class="game__map__column__row game__map__column--two__row--second">
+                            <div class="game__map__column__row__field game__map__column--two__row--second__field">4</div>
+                        </div>
+                        <div class="game__map__column__row game__map__column--two__row--third">
+                            <div class="game__map__column__row__field game__map__column--two__row--third__field">5</div>
+                        </div>
+                    </div>
+    
+                    <div class="game__map__column game__map__column--three">
+                        <div class="game__map__column__row game__map__column--three__row--first">
+                            <div class="game__map__column__row__field game__map__column--three__row--first__field">6</div>
+                        </div>
+                        <div class="game__map__column__row game__map__column--three__row--second">
+                            <div class="game__map__column__row__field game__map__column--three__row--second__field">7</div>
+                        </div>
+                        <div class="game__map__column__row game__map__column--three__row--third">
+                            <div class="game__map__column__row__field game__map__column--three__row--third__field">8</div>
+                        </div>
+    
+                    </div>
+                </div>
+    
+                <div class="game__end">
+                    <div class="game__end__result">Wygrałeś</div>
+                    <div class="game__end__text">Naciśnij przycisk "START", aby zagrać ponownie</div>
+                </div>
+    
             </div>
-            <div class="game__map">
 
-                <div class="game__map__column game__map__column--one">
-                    <div class="game__map__column__row game__map__column--one__row--first">
-                        <div class="game__map__column__row__field game__map__column--one__row--first__field">0</div>
-                    </div>
-                    <div class="game__map__column__row game__map__column--one__row--second">
-                        <div class="game__map__column__row__field game__map__column--one__row--second__field">1</div>
-                    </div>
-                    <div class="game__map__column__row game__map__column--one__row--third">
-                        <div class="game__map__column__row__field game__map__column--one__row--third__field">2</div>
-                    </div>
-                </div>
-
-                <div class="game__map__column game__map__column--two">
-                    <div class="game__map__column__row game__map__column--two__row--first">
-                        <div class="game__map__column__row__field game__map__column--two__row--first__field">3</div>
-                    </div>
-                    <div class="game__map__column__row game__map__column--two__row--second">
-                        <div class="game__map__column__row__field game__map__column--two__row--second__field">4</div>
-                    </div>
-                    <div class="game__map__column__row game__map__column--two__row--third">
-                        <div class="game__map__column__row__field game__map__column--two__row--third__field">5</div>
-                    </div>
-                </div>
-
-                <div class="game__map__column game__map__column--three">
-                    <div class="game__map__column__row game__map__column--three__row--first">
-                        <div class="game__map__column__row__field game__map__column--three__row--first__field">6</div>
-                    </div>
-                    <div class="game__map__column__row game__map__column--three__row--second">
-                        <div class="game__map__column__row__field game__map__column--three__row--second__field">7</div>
-                    </div>
-                    <div class="game__map__column__row game__map__column--three__row--third">
-                        <div class="game__map__column__row__field game__map__column--three__row--third__field">8</div>
-                    </div>
-
-                </div>
-            </div>
-            <div class="game__end">
-                <div class="game__end__result">Wygrałeś</div>
-                <div class="game__end__text">Naciśnij przycisk "START", aby zagrać ponownie</div>
-            </div>
         </div>
+
     </main>
 
 

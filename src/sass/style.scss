@@ -1,3 +1,7 @@
+$mapFontSize: 5rem;
+$mapPadding: 3rem;
+$fieldSize: 50px;
+
 *,
 *::before,
 *::after {
@@ -13,6 +17,11 @@ html {
     overflow-x: hidden;
 }
 
+.wrapper {
+    margin: 0 auto;
+    max-width: 1176px;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     overflow: hidden;
@@ -22,49 +31,66 @@ body {
 
 .game {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     transition: display .3s;
 
-    &__menu{
+    &__menu {
         display: flex;
         justify-content: center;
-        margin-right: 8rem;
-        font-size: 2rem;
+        align-items: center;
+        margin-bottom: 10rem;
+        font-size: 1.6rem;
+        z-index: 2;
+        padding: 0 .4rem;
 
-        &__about{
-            &__name{
-                font-size: 4rem;
-                font-weight: bold;
-                padding: 3rem 0;
+        &__about {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            &__rules {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
             }
 
-            &__weapon{
-                padding: 3rem 0 ;
+            &__name {
+                font-size: 2rem;
+                font-weight: bold;
+                padding: 2rem 0;
+                text-align: center;
+            }
 
-                &__button{
-                    margin-left: 1rem;
+            &__weapon {
+                padding: 2rem 0;
+
+                &__button {
+                    margin-left: 2rem;
                     padding: .5rem 2rem;
                     cursor: pointer;
                     background-color: #0093E9;
                     border: 1px solid black;
                     transition: transform .3s;
 
-                    &--x{
+                    &--x {
                         background-color: transparent;
                     }
                 }
 
 
-                &__button:hover{
+                &__button:hover {
                     transform: scale(1.1);
                 }
             }
 
-            &__start{
+            &__start {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -77,7 +103,7 @@ body {
                 transition: background-color .3s;
             }
 
-            &__start--disabled{
+            &__start--disabled {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -89,7 +115,7 @@ body {
                 cursor: default;
             }
 
-            &__start:hover{
+            &__start:hover {
                 background-color: #0093E9;
             }
         }
@@ -99,9 +125,10 @@ body {
 
     &__map {
         display: block;
-        font-size: 6rem;
+        font-size: $mapFontSize;
         transform: rotate(45deg);
         opacity: .2;
+        // margin-top: 2rem;
 
 
         &__column {
@@ -109,37 +136,37 @@ body {
             flex-direction: row;
 
             &__row {
-                padding: 5rem;
+                padding: $mapPadding;
                 cursor: default;
 
-                &__field{
+                &__field {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 60px;
-                    height: 60px;
+                    width: $fieldSize;
+                    height: $fieldSize;
                     opacity: 0;
                     transition: opacity .6s;
                 }
 
             }
 
-            &__rows__used{
-                padding: 5rem;
+            &__rows__used {
+                padding: $mapPadding;
                 cursor: default;
                 transition: background-color .3s;
 
-                &__fields__used{
+                &__fields__used {
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 60px;
-                    height: 60px;
+                    width: $fieldSize;
+                    height: $fieldSize;
                     opacity: 1;
                     transition: opacity .6s;
                 }
             }
-            
+
 
 
         }
@@ -161,9 +188,11 @@ body {
             }
         }
 
-        &__column--three{
-            &__row{
-                &--first, &--second{
+        &__column--three {
+            &__row {
+
+                &--first,
+                &--second {
                     border-right: 2px solid black;
                 }
             }
@@ -173,46 +202,115 @@ body {
 
     &__end {
         display: none;
-        width: 484px;
+        height: 335px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-size: 3rem;
+        font-size: 1.6rem;
         text-align: center;
 
-        &__result{
+        &__result {
             padding-bottom: 2rem;
-            font-size: 4rem;
+            font-size: 2rem;
             font-weight: bold;
+        }
+
+        &__text {
+            margin: 0 .5rem;
         }
     }
 
-    .row__active{
+    .row__active {
         cursor: pointer;
         transition: background-color .3s;
     }
 
-    .row__active:hover{
+    .row__active:hover {
         background-color: #0093E9;
     }
 
-    .map__active{
-        animation: rotateMap .6s forwards .3s ;
+    .map__active {
+        animation: rotateMap .6s forwards .3s;
 
     }
 
     @keyframes rotateMap {
-        from{
+        from {
             transform: rotate(45deg);
             opacity: .3;
         }
-        to{
+
+        to {
             transform: rotate(0deg);
             opacity: 1;
         }
     }
 
+}
+
+@media (max-width: 300px) {
+    .game__menu {
+
+        font-size: 1.2rem;
+
+        &__about {
+
+            &__rules {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &__name {
+                font-size: 1.6rem;
+                font-weight: bold;
+                padding: 2rem 0;
+                text-align: center;
+            }
+
+            &__weapon {
+                padding: 2rem 0;
+
+                &__button {
+                    margin-left: 1rem;
+                    padding: .3rem 1.2rem;
 
 
+                    &--x {
+                        background-color: transparent;
+                    }
+                }
 
+
+                &__button:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+        }
+    }
+
+    .game__map {
+
+        &__column {
+            &__row {
+                &__field {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            &__rows__used {
+                padding: $mapPadding;
+
+                &__fields__used {
+                    width: 30px;
+                    height: 30px;
+
+                }
+            }
+
+        }
+    }
 }

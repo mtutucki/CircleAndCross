@@ -1,0 +1,58 @@
+$mapFontSize: 5.5rem;
+$mapPadding: 5rem;
+$fieldSize: 60px;
+
+.game {
+    justify-content: space-around;
+
+    &__menu{
+        display: flex;
+        justify-content: center;
+        font-size: 2.2rem;
+
+        &__about{
+            &__name{
+                font-size: 4rem;
+            }
+
+            &__weapon{
+                &__button{
+                    margin-left: 3rem;
+                }
+            }
+        }
+    }
+
+    &__map {
+        &__column {
+            &__row {
+                padding: $mapPadding;
+
+                &__field{
+                    width: $fieldSize;
+                    height: $fieldSize;
+                }
+            }
+
+            &__rows__used{
+                padding: $mapPadding;
+
+                &__fields__used{
+                    width: $fieldSize;
+                    height: $fieldSize;
+                }
+            }
+        }
+    }
+
+    &__end {
+        width: 484px;
+        font-size: 3rem;
+
+        &__result{
+            padding-bottom: 2rem;
+            font-size: 4rem;
+        }
+    }
+
+}
