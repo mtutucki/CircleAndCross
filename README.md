@@ -9,7 +9,7 @@ https://mtutucki.github.io/CircleAndCross/
 * [Technologies](#technologies)
 
 ## About the project
-It's a simple circle and cross game as you know from childhood. 
+It's a simple circle and cross game, as you know from childhood. 
 
 ## Technologies
 I used HTML, SASS and javascript.  <br /> 
